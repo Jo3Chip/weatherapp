@@ -24,6 +24,7 @@ function search() {
     .then(data => weatherData = data)
     .then(() => console.log(weatherData))
     .then(() => update())
+    .then(() => backgroundChange())
     .catch(error => console.log('ERROR'))
     
 }
@@ -32,8 +33,19 @@ function update() {
     weatherMain.innerHTML = weatherData.weather[0].main;
     weatherDisplay.innerHTML = weatherData.weather[0].description;
     weatherTemp.innerHTML = weatherData.main.temp;
-    
 }
+
+function backgroundChange() {
+    if(weatherMain.innerHTML == "Clouds"){
+        document.body.style.backgroundImage = "url('cloud.jpg')";
+        console.log('its cloudy');
+    }
+    else{
+        console.log('its sunny');
+        console.log(weatherMain);
+    }
+}
+
 
 submit.addEventListener('click', () => {
     search();
