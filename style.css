@@ -1,6 +1,5 @@
 body{
-    background-image: url('sunshine.jpg');
-    background-position: fill;
+    background-image: url('cloud.jpg');
     background-repeat: no-repeat;
-    transition: background 0.4s linear;
+    transition: background 2s linear;
 }

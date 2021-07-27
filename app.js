@@ -37,7 +37,7 @@ function update() {
 
 function backgroundChange() {
     if(weatherMain.innerHTML == "Clouds"){
-        document.body.style.backgroundImage = "url('cloud.jpg')";
+        document.body.style.backgroundImage = "url('sunshine.jpg')";
         console.log('its cloudy');
     }
     else{
