@@ -7,6 +7,11 @@ var weatherDisplay = document.getElementById('description');
 var weatherMain = document.getElementById('main');
 var weatherTemp = document.getElementById('temp');
 var weatherData;
+var background = {
+    "Clear": "url('sunshine.jpg')",
+    "Clouds": "url('cloud.jpg')",
+    "Rain": "url('rain.jpg')"
+}
 
 function search() {
     var url = baseURL + locationInput.value + units + apiKey;
@@ -36,13 +41,14 @@ function update() {
 }
 
 function backgroundChange() {
-    if(weatherMain.innerHTML == "Clouds"){
-        document.body.style.backgroundImage = "url('sunshine.jpg')";
-        console.log('its cloudy');
-    }
-    else{
-        console.log('its sunny');
-        console.log(weatherMain);
+    for (var key in background){
+        if(weatherMain.innerHTML == key){
+            document.body.style.backgroundImage = background[key]
+            console.log("key " + key + " has value " + background[key]);
+        }
+        else{
+            console.log('weather not found');
+        }
     }
 }
 
