@@ -8,9 +8,9 @@ var weatherMain = document.getElementById('main');
 var weatherTemp = document.getElementById('temp');
 var weatherData;
 var background = {
-    "Clear": "url('sunshine.jpg')",
-    "Clouds": "url('cloud.jpg')",
-    "Rain": "url('rain.jpg')"
+    "Clear": "url('img/sunshine.jpg')",
+    "Clouds": "url('img/cloud.jpg')",
+    "Rain": "url('img/rain.jpg')"
 }
 
 function search() {
