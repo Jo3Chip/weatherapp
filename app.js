@@ -1,13 +1,17 @@
-var submit = document.getElementById('submit');
+//Global Variables
+//URL for the API call
 var baseURL = 'http://api.openweathermap.org/data/2.5/weather?q='
-var locationInput = document.getElementById("location");
 var units = '&units=metric'
 var apiKey = '&appid=3f265935a23a9aeba683d087c268057d'
+//Variables for input and output of API information
+var submit = document.getElementById('submit');
+var locationInput = document.getElementById("location");
 var weatherDisplay = document.getElementById('description');
 var weatherMain = document.getElementById('main');
 var weatherTemp = document.getElementById('temp');
-var weatherData;
 var container = document.getElementById('full-container');
+var weatherData;
+//Array of background images that relate to weather title returned from the API (all matching the current documentation (03/08/21))
 var background = {
     "Thunderstorm": "url('img/thunderstorm.jpg')",
     "Drizzle": "url('img/drizzle.jpg')",
@@ -25,7 +29,7 @@ var background = {
     "Clear": "url('img/clear.jpg')",
     "Clouds": "url('img/clouds.jpg')"
 }
-
+//API call function
 function search() {
     var url = baseURL + locationInput.value + units + apiKey;
     console.log(url);
@@ -46,13 +50,13 @@ function search() {
     .catch(error => console.log('ERROR'))
     
 }
-
+//Updates the information on the UI elements
 function update() {
     weatherMain.innerHTML = weatherData.weather[0].main;
     weatherDisplay.innerHTML = weatherData.weather[0].description;
     weatherTemp.innerHTML = weatherData.main.temp;
 }
-
+//Changes the background depending on the title taken from the API.
 function backgroundChange() {
     for (var key in background){
         if(weatherMain.innerHTML == key){
@@ -65,8 +69,13 @@ function backgroundChange() {
     }
 }
 
-
+//Event listeners to triiger the search function
 submit.addEventListener('click', () => {
     search();
+})
+locationInput.addEventListener('keypress', function(e) {
+    if (e.key ==='Enter') {
+        search();
+    }
 })
 
