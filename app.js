@@ -7,10 +7,23 @@ var weatherDisplay = document.getElementById('description');
 var weatherMain = document.getElementById('main');
 var weatherTemp = document.getElementById('temp');
 var weatherData;
+var container = document.getElementById('full-container');
 var background = {
-    "Clear": "url('img/sunshine.jpg')",
-    "Clouds": "url('img/cloud.jpg')",
-    "Rain": "url('img/rain.jpg')"
+    "Thunderstorm": "url('img/thunderstorm.jpg')",
+    "Drizzle": "url('img/drizzle.jpg')",
+    "Rain": "url('img/rain.jpg')",
+    "Snow": "url('img/snow.jpg')",
+    "Mist": "url('img/mist.jpg')",
+    "Smoke": "url('img/smoke.jpg')",
+    "Haze": "url('img/haze.jpg')",
+    "Dust": "url('img/dust.jpg')",
+    "Fog": "url('img/fog.jpg')",
+    "Sand": "url('img/sand.jpg')",
+    "Ash": "url('img/ash.jpg')",
+    "Squall": "url('img/squall.jpg')",
+    "Tornado": "url('img/tornado.jpg')",
+    "Clear": "url('img/clear.jpg')",
+    "Clouds": "url('img/clouds.jpg')"
 }
 
 function search() {
@@ -43,7 +56,7 @@ function update() {
 function backgroundChange() {
     for (var key in background){
         if(weatherMain.innerHTML == key){
-            document.body.style.backgroundImage = background[key]
+            container.style.backgroundImage = background[key]
             console.log("key " + key + " has value " + background[key]);
         }
         else{
