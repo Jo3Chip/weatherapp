@@ -1,3 +1,9 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
 /* */
 #full-container{
     height: 100vh;
@@ -12,8 +18,8 @@
 }
 
 #ui-container{
-    width: 50%;
-    max-height: 80%;
+    width: 40%;
+    height: 60%;
     padding: 10%;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     position: relative;
@@ -36,3 +42,74 @@
     z-index: -1;
 }
 
+#ui-elements, #results-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+#input-container{
+    height: 20vh;
+    position: absolute;
+    top: 5vh;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#title,label{
+    padding: 10px;
+}
+
+
+#submit,#location{
+    font-size: 1rem;
+}
+
+#submit{
+    width: 20%;
+    background: #b3fcff;
+    color: #000000;
+    border: 1px, solid, black;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px #000000;
+    text-shadow: none;
+
+}
+
+#title{
+    text-decoration: underline;
+}
+
+#results-container{
+    position: absolute;
+    top: 25vh;
+}
+
+.item{
+    margin: 2% 0%;
+}
+
+p{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1024px){
+    #ui-container{
+        width: 90%;
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 280px){
+    *{
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-height: 650px){
+    #ui-container{
+        height: 80%;
+    }
+}
