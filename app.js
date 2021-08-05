@@ -89,5 +89,3 @@ locationInput.addEventListener('keypress', function(e) {
         search();
     }
 })
-// remove this after completing styling
-search();
